@@ -1,0 +1,170 @@
+
+body {
+  background: whitesmoke;
+}
+
+a {
+  cursor: pointer;
+}
+
+.list-unstyled {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+}
+
+.list-unstyled li {
+  margin-bottom: 3px;
+}
+
+.list-unstyled li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+}
+
+.list-unstyled li a span {
+  color: #757575;
+}
+
+.container {
+  width: 63%;
+  padding: 15px;
+  margin: auto;
+}
+
+.container-fluid {
+  width: 25%;
+  padding: 15px;
+  margin: auto;
+}
+
+.inbox {
+  vertical-align: top;
+  background: #fff;
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 0px 10px 20px 10px;
+}
+
+.inbox h4 {
+  color: #82417e;
+  font-size: 23px;
+  padding: 5px 0px;
+  margin: 5px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.inbox-shadow {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.nav-bar {
+  background: #82417f;
+  padding: 13px;
+}
+
+.side-bar {
+  width: 20%;
+}
+
+.content {
+  width: 72%;
+}
+
+.title {
+  display: inline;
+}
+
+.title a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.auth {
+  float: right;
+  padding: 10px;
+  background: #fbe939;
+  color: #fff;
+}
+
+.auth a {
+  text-decoration: none;
+  color: #82417e;
+}
+
+.auth-user {
+  position: relative;
+  float: right;
+  margin-top: 10px;
+  margin-right: 13px;
+}
+
+.auth-username {
+  padding-left: 35px;
+  color: #fbe939;
+  font-weight: 600;
+}
+
+.auth-pic {
+  max-width: 30px;
+  max-height: 30px;
+  position: absolute;
+  bottom: -7px;
+  border-radius: 50%;
+}
+
+.detail {
+  width: 100%;
+}
+
+.loginbox {
+  float: left;
+  font-size: 30px;
+  padding: 0px 15px;
+  border-right: 1px solid #ccc;
+  margin-right: 16px;
+  color: 82417e;
+  font-weight: 600;
+}
+
+.pull-right {
+  float: right
+}
+
+div.btn-action {
+  margin: 5px 0px;
+}
+
+div.btn-action a {
+  background: #fbe939;
+  color: #82417f;
+  font-weight: 600;
+}
+
+.item-form {
+  margin: 10px 0px 10px 0px;
+}
+
+.form-label {
+  vertical-align: top;
+  display: block;
+  font-weight: 600;
+}
+
+div.form-group {
+  margin: 5px 0px;
+}
+
+input.form-control {
+  padding: 4px 2px;
+  width: 32%;
+}
+
+textarea.form-control {
+  padding: 4px 2px;
+}

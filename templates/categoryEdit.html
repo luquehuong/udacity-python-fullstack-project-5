@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="inbox inbox-shadow detail">
+    <h4>Edit Category</h4>
+    <form class="item-form" action="/categories/{{category['id']}}/edit" method="POST">
+        <div class="form-group">
+            <label class="form-label">Title</label>
+            <input class="form-control" name="category_title" type="text" value="{{ category['title'] }}" required/>
+        </div>
+        <button type="submit">Save</button>
+        <button onclick="window.history.back()" class="pull-right">Back</button>
+    </form>
+</div>
+{% endblock %}

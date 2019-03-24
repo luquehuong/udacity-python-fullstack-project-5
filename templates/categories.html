@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="inbox inbox-shadow side-bar">
+    <h4>Categories</h4>
+    {% if session['user'] %}
+    <div class="btn-action"><a href="/categories/add">Add New</a></div>
+    {% endif %}
+    <ul class="list-unstyled">
+        {% for category in categories %}
+            <li><a href="/categories/{{category['id']}}/items">{{ category['title'] }}</a></li>
+        {% endfor %}    
+    </ul>
+</div>
+<div class="inbox inbox-shadow content">
+    <h4>Lastest Items</h4>
+    <ul class="list-unstyled">
+    {% for item in lastest_items %}
+        <li><a href="/categories/{{item['category_id']}}/items/{{item['id']}}">
+            {{ item['title'] }} <span>({{ item['category_title'] }})</span>
+        </a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="inbox inbox-shadow side-bar">
+    <h4>Categories</h4>
+    {% if session['user'] %}
+    <div class="btn-action"><a href="/categories/add">Add New</a></div>
+    {% endif %}
+    <ul class="list-unstyled">
+    {% for category in categories %}
+        <li><a href="/categories/{{category['id']}}/items">{{ category['title'] }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+<div class="inbox inbox-shadow content">
+    <h4>{{ category['title'] }} Items ({{ items|length }})</h4>
+    {% if session['user'] %}
+    <div class="btn-action"><a href="/categories/{{category['id']}}/items/add">Add New</a></div>
+    {% endif %}
+    <ul class="list-unstyled">
+    {% for item in items %}
+    <li><a href="/categories/{{item['category_id']}}/items/{{item['id']}}">{{ item['title'] }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

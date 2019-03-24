@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Item Catalog | Project 4</title>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="760876202495-ej0t8jil1ahvck4effnkhvfnp21tfvus.apps.googleusercontent.com">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <span class="loginbox">Login</span><div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+        
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                if (googleUser) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/gconnect',
+                        data: {
+                            'name': profile.getName(),
+                            'photo': profile.getImageUrl(),
+                            'email': profile.getEmail(),
+                            'state': '{{state}}'
+                        },
+                    }).done(function(resp) {
+                        debugger
+                        if (!resp['error']) {
+                            $('#result').html('Redrecting...')
+                            setTimeout(function() {
+                                window.location.href = '/'
+                            }, 1000)
+                        }
+                        else {
+                            $('#result').html('Something went wrong, please try again later!')
+                        }
+                    })
+                }
+                else {
+                    $('#result').html('Failed to make a server-side call. Check your configuretion and console.')
+                }
+            }
+        </script>
+    </body>
+    <footer>
+
+    </footer>
+</html>

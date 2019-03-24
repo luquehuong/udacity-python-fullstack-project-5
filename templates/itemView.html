@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="inbox inbox-shadow detail">
+    <div>
+        <h4>{{ category['title'] }}</h4>
+        {% if session['user'] %}
+        <div class="btn-action">
+            <a href="/categories/{{item['category_id']}}/edit">Edit</a> | <a href="/categories/{{item['category_id']}}/delete">Delete</a>
+        </div>
+        {% endif %}
+    </div>
+    <div>
+        <h4>{{ item['title'] }}</h4>
+        <p><b>Description</b>: {{ item['description'] }}</p>
+        {% if session['user'] %}
+        <div class="btn-action">
+            <a href="/categories/{{item['category_id']}}/items/{{item['id']}}/edit">Edit</a> | <a href="/categories/{{item['category_id']}}/items/{{item['id']}}/delete">Delete</a>
+        </div>
+        {% endif %}
+    </div>
+    <button onclick="window.location.href='/categories/{{ category['id'] }}/items'" class="pull-right">Back</button>
+</div>
+{% endblock %}
+

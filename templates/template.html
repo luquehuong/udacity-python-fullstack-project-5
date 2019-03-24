@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Item Catalog | Project 4</title>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="760876202495-ej0t8jil1ahvck4effnkhvfnp21tfvus.apps.googleusercontent.com">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="nav-bar">
+            <h1 class="title"><a href="/">Catalog App</a></h1>
+            <span class="auth">
+                {% if session['user'] %}
+                <a href="javascript:;" onclick="signOut();">Sign out</a>
+                {% else %}
+                <a href="/login">Sign In</a>
+                {% endif %}
+            </span>
+            {% if session['user'] %}
+            <span class="auth-user">
+                <img class="auth-pic" src="{{session['picture']}}"> <span class="auth-username">{{session['user']}}</span>
+            </span>
+            {% endif %}
+        </div>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: '/gdisconnect',
+                        data: {},
+                    })
+                    .done(function(resp) {
+                        if (!resp.error) {
+                            window.location.href = '/'
+                        }
+                    })
+                });
+            }
+            function onLoad() {
+                gapi.load('auth2', function() {
+                    gapi.auth2.init();
+                });
+            }
+        </script>
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    </body>
+    <footer>
+
+    </footer>
+</html>

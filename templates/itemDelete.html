@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<form action="/categories/{{category_id}}/items/{{item_id}}/delete" method="POST">
+    <input type="hidden" value="{{ item_id }}" />
+    <h4>Are you sure, this can not be undo</h4>
+    <button type="submit">Delete</button>
+    <button>Back</button>
+</form>
+{% endblock %}
