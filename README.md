@@ -4,7 +4,7 @@
 
 #### Server
 1. IPV4: `178.128.92.125`
-2. Item Catalog URL: `http://178.128.92.125`
+2. Item Catalog Web Application URL: `http://luquehuong.tk`
 
 #### Software
 1. Apache Server
@@ -21,4 +21,4 @@
 
 
 #### Item Catalog
-Visit `http://178.128.92.125`
+Visit `http://luquehuong.tk`
