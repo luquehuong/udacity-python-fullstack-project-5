@@ -1,21 +1,24 @@
-# Udacity Python Fullstack Project 4: Item Catalog
+# Udacity Python Fullstack Project 5: Deploying Item Catalog App
 
-> Modern web applications perform a variety of functions and provide amazing features and utilities to their users; but deep down, it’s really all just creating, reading, updating and deleting data. In this project, you’ll combine your knowledge of building dynamic websites with persistent data storage to create a web application that provides a compelling service to your users.
+> A deep understanding of exactly what your web applications are doing, how they are hosted, and the interactions between multiple systems are what define you as a Full Stack Web Developer. In this project, you’ll be responsible for turning a brand-new, bare bones, Linux server into the secure and efficient web application host your applications need.
 
-#### Prerequired
-1. Clone the fullstack-nanodegree-vm repository.
-2. Open `fullstack-nanodegree-vm` directory in terminal
-2. Look for the catalog directory and replace it with the contents of this respository.
+#### Server
+1. IPV4: `178.128.92.125`
+2. Item Catalog URL: `http://178.128.92.125`
 
-#### Setup database
-1. Open terminal
-2. Redirect to root project directory
-3. Run `vagrant ssh`
-4. Redirect to `catalog` directory
-5. Run `python database_setup.py; python database_init.py`
+#### Software
+1. Apache Server
+2. Posgresql Database
+3. Python libraries and frameworks: Flask, pip, sqlalchemy
+
+#### Summary of configurations
+1. Change SSH port from `22` to `2200`.
+2. Set up Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
+3. Add, grant permission, and setup key based authentication for `grader` user.
+4. Force users to use SSH to login.
+5. Configure the local timezone to UTC.
+6. Setup Item Catalog web app up and running with Apache using WSGI
 
 
-#### Run the application
-1. Redirect to `catalog` directory
-2. Run `python application.py`
-3. Visit `http://localhost:5000` (Note: Must use the URL `http://localhost:5000` for third party login feature)
+#### Item Catalog
+Visit `http://178.128.92.125`
